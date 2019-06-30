@@ -1,6 +1,6 @@
 FROM fedora:latest
 
-RUN curl -Lo jk https://github.com/jkcfg/jk/releases/download/0.2.4/jk-linux-amd64 && \
+RUN curl -Lo jk https://github.com/jkcfg/jk/releases/download/0.2.7/jk-linux-amd64 && \
     chmod +x jk && \
     mv jk /usr/bin/ && \
     mkdir -p /data
