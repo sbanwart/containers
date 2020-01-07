@@ -6,4 +6,4 @@ jobs:
     name: Linter
     runs-on: cdssnc/docker-lint
     steps:
-      - uses: cds-snc/github-actions/docker-lint
+      - uses: cds-snc/github-actions/docker-lint@master
