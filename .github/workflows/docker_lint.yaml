@@ -1,0 +1,9 @@
+name: Lint Dockerfiles
+on: [push]
+
+jobs:
+  lint:
+    name: Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: cds-snc/github-actions/docker-lint@master
