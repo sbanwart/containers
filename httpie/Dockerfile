@@ -9,5 +9,9 @@ RUN microdnf install -y python3-pip && \
     microdnf clean all && \
     rm -rf /var/cache/yum
 
+RUN useradd httpie
+
+USER httpie
+
 ENTRYPOINT [ "http" ]
 CMD ["--help"]
