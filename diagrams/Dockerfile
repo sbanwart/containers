@@ -3,7 +3,7 @@ FROM registry.fedoraproject.org/fedora-minimal:35
 LABEL maintainer="sbanwart@acm.org"
 LABEL version="0.20.0"
 LABEL description="A container for running the Diagrams drawing tool. https://diagrams.mingrammer.com/"
-
+D
 RUN microdnf update -y && \
     microdnf install -y graphviz python3-pip && \
     pip install --no-cache-dir diagrams==0.20.0 && \
