@@ -5,7 +5,7 @@ LABEL version="0.23.3"
 LABEL description="A container for running the Diagrams drawing tool. https://diagrams.mingrammer.com/"
 
 RUN microdnf update -y && \
-    microdnf install -y graphviz python3-pip shadow-utils && \
+    microdnf install -y graphviz python3-pip python3-devel shadow-utils gcc && \
     pip install --no-cache-dir diagrams==0.23.3 && \
     microdnf clean all && \
     rm -rf /var/cache/yum && \
