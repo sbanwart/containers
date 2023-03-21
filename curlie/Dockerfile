@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora-minimal:35
+FROM registry.fedoraproject.org/fedora-minimal:37
 
 LABEL maintainer="sbanwart@acm.org"
 LABEL version="1.6.9"

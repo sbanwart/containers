@@ -1,12 +1,12 @@
-FROM registry.fedoraproject.org/fedora-minimal:35
+FROM registry.fedoraproject.org/fedora-minimal:37
 
 LABEL maintainer="sbanwart@acm.org"
-LABEL version="0.21.1"
+LABEL version="0.23.3"
 LABEL description="A container for running the Diagrams drawing tool. https://diagrams.mingrammer.com/"
 
 RUN microdnf update -y && \
-    microdnf install -y graphviz python3-pip && \
-    pip install --no-cache-dir diagrams==0.21.1 && \
+    microdnf install -y graphviz python3-pip shadow-utils && \
+    pip install --no-cache-dir diagrams==0.23.3 && \
     microdnf clean all && \
     rm -rf /var/cache/yum && \
     mkdir -p /data
