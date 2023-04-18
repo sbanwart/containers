@@ -1,0 +1,18 @@
+FROM registry.fedoraproject.org/fedora-minimal:37
+
+LABEL maintainer="sbanwart@acm.org"
+LABEL version="7.4.0"
+LABEL description="A container for running the Ansible automation tool. https://www.ansible.com/"
+
+RUN microdnf update -y && \
+    microdnf install -y python3-pip shadow-utils && \
+    pip3 install --no-cache-dir ansible==7.4.0 && \
+    microdnf clean all && \
+    rm -rf /var/cache/yum
+
+RUN useradd ansible
+
+USER ansible
+
+ENTRYPOINT [ "ansible" ]
+CMD ["--help"]
