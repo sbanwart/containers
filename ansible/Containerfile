@@ -1,12 +1,12 @@
-FROM registry.fedoraproject.org/fedora-minimal:37
+FROM registry.fedoraproject.org/fedora-minimal:39
 
 LABEL maintainer="sbanwart@acm.org"
-LABEL version="7.4.0"
+LABEL version="9.1.0"
 LABEL description="A container for running the Ansible automation tool. https://www.ansible.com/"
 
 RUN microdnf update -y && \
     microdnf install -y python3-pip shadow-utils && \
-    pip3 install --no-cache-dir ansible==7.4.0 && \
+    pip3 install --no-cache-dir ansible==9.1.0 && \
     microdnf clean all && \
     rm -rf /var/cache/yum
 
