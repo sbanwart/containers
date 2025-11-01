@@ -1,0 +1,11 @@
+FROM nixos/nix:latest
+
+LABEL maintainer="sbanwart@acm.org"
+LABEL version="0.0.1"
+LABEL description="A NixOS container with emanote for use with GitHub Actions"
+
+RUN nix --experimental-features 'nix-command flakes' profile install --impure github:srid/emanote \
+  && nix-store --gc
+
+ENTRYPOINT [ "/bin/sh" ]
+
