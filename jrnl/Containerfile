@@ -1,12 +1,12 @@
-FROM registry.fedoraproject.org/fedora-minimal:39
+FROM registry.fedoraproject.org/fedora-minimal:43
 
 LABEL maintainer="sbanwart@acm.org"
-LABEL version="4.1"
+LABEL version="4.2"
 LABEL description="A container for running the jrnl tool. https://jrnl.sh/"
 
 RUN microdnf update -y && \
     microdnf install -y python3-pip shadow-utils && \
-    pip3 install --no-cache-dir jrnl==4.1 && \
+    pip3 install --no-cache-dir jrnl==4.2 && \
     microdnf clean all && \
     rm -rf /var/cache/yum
 
